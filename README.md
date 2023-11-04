@@ -5,6 +5,7 @@ Netstat-pid display 'netstat' connectivity information for processes and threads
 * Display network connections from all processes including threads on a host (default).
 * Display both hostname and container name if available, in the UTS namespace.
 * Displays network connections for a specific pid.
+* Write connectivity information as json to standard out.
 
 ## How It Works
 
