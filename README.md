@@ -14,8 +14,6 @@ Netstat-pid is a binary the netstat network connection information.
 
 ## Usage
 
-<details><summary><b>Show instructions</b></summary>
-
 1. List connections for a specific PID:
 
     ```sh
