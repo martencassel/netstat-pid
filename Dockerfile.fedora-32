@@ -1,0 +1,12 @@
+FROM fedora:32 AS stage1
+RUN dnf -y update && dnf -y install wget
+RUN wget https://go.dev/dl/go1.21.3.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.21.3.linux-amd64.tar.gz
+WORKDIR /src/
+COPY go.mod .
+COPY *.go .
+RUN /usr/local/go/bin/go mod tidy
+RUN /usr/local/go/bin/go build -o /src/
+
+FROM fedora:32 
+COPY --from=stage1 /src/netstat-pid .
+
