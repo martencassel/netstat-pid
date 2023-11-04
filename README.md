@@ -1,15 +1,15 @@
 # Netstat-pid 
 
-Netstat-pid is a binary the netstat network connection information.
+Netstat-pid display 'netstat' connectivity information for processes and threads on a host.
 
-* Display network connections from all processes including threads on a host by default.
-* Display both hostname and container name if available.
+* Display network connections from all processes including threads on a host (default).
+* Display both hostname and container name if available, in the UTS namespace.
 * Displays network connections for a specific pid.
 
 ## How It Works
 
 1. Traverses the entire process tree and each thread 
-2. Reads connection information from proc files tcp and tcp6.
+2. Reads connection information from proc files tcp and tcp6, per process and thread.
 3. Outputs the connection information as JSON to stdout.
 
 ## Usage
